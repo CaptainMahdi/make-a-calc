@@ -1,19 +1,15 @@
-print("Welcome to the calculator")
+print("Welcome to the Passive Aggressive Calculator")
 
-num1 = float(input("Please provide the first number: "))
-num2 = float(input("Please provide the second number: "))
-operation = input("What operation would you like to use? addition(+), subtraction(-), multiplication(*), division(/): ")
+equation = input("Please provide the equation that you cant do by yourself: ")
 
-if operation == "+": 
-    result = num1 + num2
-elif operation == "-":
-    result = num1 - num2
-elif operation == "*":
-    result = num1 * num2
-elif operation == "/":
-    result = num1 / num2
+
+
+if "+" in equation or "-" in equation or "*" in equation or "/" in equation:
+    try:
+        result = eval(equation)
+        print(f'This is basic math but the answer is : {result:.2f}')
+    except ZeroDivisionError:
+        print("Youre trying to divide by zero, genius, that doesnt work.")
 else:
-    print("Invalid operation")
+    print("Thats not a real sign genius, try again")
 
-
-print("The answer is: ", result)
